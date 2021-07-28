@@ -21,6 +21,16 @@
     // &:last-child {
     //   margin-left: 7.5px;
     // }
+    &:hover{
+      cursor: pointer;
+      & .menu-image{
+        transform: scale(1.1);
+        transition: transform 3s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+      & .content{
+        background:rgba(0, 255, 242, 0.856);
+      }
+    }
     .menu-image{
       position: absolute;
       // width: 100%;
