@@ -14,9 +14,12 @@ class App extends React.Component{
       currentUser: null,
     }
   }
-  unSubscibeFromAuth = null;
+  unSubscibeFromAuth = null
   componentDidMount() {
-    this.unSubscibeFromAuth = auth.onAuthStateChanged(user => this.setState({currentUser:user}))
+    this.unSubscibeFromAuth = auth.onAuthStateChanged(user => {this.setState({currentUser:user})
+    console.log(user)
+  })
+    
   }
   componentWillUnmount() {
     this.unSubscibeFromAuth();
@@ -24,7 +27,7 @@ class App extends React.Component{
   render(){
     return (
       <div >
-      <Header/>
+      <Header currentUser={this.state.currentUser}/>
       <Switch>
       <Route exact path="/home" component = {HomePage} />
       
